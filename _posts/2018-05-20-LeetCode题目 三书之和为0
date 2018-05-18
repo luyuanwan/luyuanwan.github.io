@@ -1,0 +1,76 @@
+## LeetCode题目 三书之和为0
+
+### 题目
+
+给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。  
+注意：答案中不可以包含重复的三元组。  
+
+例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]  
+满足要求的三元组集合为：  
+[  
+  [-1, 0, 1],  
+  [-1, -1, 2]  
+]  
+
+### 问题分析
+
+这道题最容易想到的是穷举法，但是复杂度太高，系统一定会判定为超时，有没有复杂度较低的解法呢？  
+一般这种题目可以使用双指针法，在使用过程中需要稍作一些变化。  
+
+首先，对数组进行排序，按照从小到大排序  
+然后从头选择第一个元素（记为A），接着使用2个指针分别指向后面（A后面的）第一个元素和最后一个元素，于是问题就转化为，在A后面的元素中查找和为-A的两个数，问题得解  
+
+![](https://img-blog.csdn.net/20150702173319695)
+
+### 代码  
+```
+    public  List<List<Integer>> threeSum(int[] nums) {
+
+        if(nums == null || nums.length < 3){
+            return new ArrayList<>();
+        }
+
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        Set<String> has = new HashSet<>();
+        for(int i = 0;i<=nums.length-3;i++){
+            int a = nums[i];//第一个数
+            if(a >0){
+                break;
+            }
+            //双指针
+            int left = i+1;
+            int right = nums.length-1;
+            while(left < right){
+                if(a + nums[left] + nums[right] == 0){
+                    String cur = String.valueOf(a) + "_" + String.valueOf(nums[left]) + "_" + String.valueOf(nums[right]);
+                    if(has.contains(cur)){
+                        left++;
+                        right--;
+                        continue;
+                    }
+                    has.add(cur);
+                    List<Integer> one = new ArrayList<>();
+                    one.add(a);
+                    one.add(nums[left]);
+                    one.add(nums[right]);
+                    result.add(one);
+                    left++;
+                    right--;
+
+                }else if(a + nums[left] + nums[right] >0){
+                    right--;
+                }else if(a + nums[left] + nums[right] <0){
+                    left++;
+                }
+            }
+        }
+        return result;
+    } 
+```
+
+
+### 参考
+
+答案参考网址：https://blog.csdn.net/s634772208/article/details/46729197   
+题目参考网址：https://leetcode-cn.com/problems/3sum/description/

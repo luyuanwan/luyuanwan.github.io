@@ -34,7 +34,7 @@ Objective-C的方法调用实则为“发送消息”,我们来看`[dog eat]`实
 
 ```
 objc_msgSend(dog, SEL)//SEL为eat方法的标识符@selector(@"eat")
-```
+``` 
 
 若方法中函数参数，则为：
 

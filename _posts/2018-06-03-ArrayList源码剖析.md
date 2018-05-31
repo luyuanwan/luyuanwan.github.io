@@ -15,3 +15,17 @@ ArrayList是List接口的可变数组实现，底层是以数组形式实现的�
         return true;  
     }  
 ```  
+最后说一下扩容规则，扩容的规则就是扩原来的一半，比如原来是16，扩容就是加8，即24
+```java
+    private void grow(int minCapacity) {
+        // overflow-conscious code
+        int oldCapacity = elementData.length;
+        int newCapacity = oldCapacity + (oldCapacity >> 1);
+        if (newCapacity - minCapacity < 0)
+            newCapacity = minCapacity;
+        if (newCapacity - MAX_ARRAY_SIZE > 0)
+            newCapacity = hugeCapacity(minCapacity);
+        // minCapacity is usually close to size, so this is a win:
+        elementData = Arrays.copyOf(elementData, newCapacity);
+    }
+```

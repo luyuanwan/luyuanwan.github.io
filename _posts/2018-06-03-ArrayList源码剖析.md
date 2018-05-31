@@ -29,3 +29,5 @@ ArrayList是List接口的可变数组实现，底层是以数组形式实现的�
         elementData = Arrays.copyOf(elementData, newCapacity);
     }
 ```
+
+最后的最后，我说一下面试时可能被问到的问题。面试官问：ArrayList能否存放null?正确的回答是：可以的。

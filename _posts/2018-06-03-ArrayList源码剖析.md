@@ -6,8 +6,8 @@ ArrayList是List接口的可变数组实现，底层是以数组形式实现的�
 
 ```java
   /**  
-    * The array buffer into which the elements of the ArrayList are stored. 
-    
+    * The array buffer into which the elements of the ArrayList are stored.  
+    * The capacity of the ArrayList is the length of this array buffer. Any  
     
  /**  
    * The array buffer into which the elements of the ArrayList are stored.  

@@ -52,9 +52,10 @@ Java7中使用Entry来代表每一个HashMap中的数据节点，而Java8中使�
         }
     }
  ```
- 如果元素还是链表，则以Node表示，如果元素是红黑树，则使用TreeNode表示，所以可以根据数组中存放的元素的数据类型是Node还是TreeNode来判断该位置下是链表还是红黑树。
+如果元素还是链表，则以Node表示，如果元素是红黑树，则使用TreeNode表示，所以可以根据数组中存放的元素的数据类型是Node还是TreeNode来判断该位置下是链表还是红黑树。
  
- ### 添加元素  
+ 
+### 添加元素
  
  添加一个元素的代码如下
  
@@ -126,4 +127,4 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 }
 ```
  
- 参考网址:http://www.importnew.com/28263.html
+参考网址:http://www.importnew.com/28263.html

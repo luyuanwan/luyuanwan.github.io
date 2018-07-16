@@ -11,7 +11,7 @@ SpringMVC的核心是一个Servlet，它根据Servlet规范实现了一个易于
 SpringMVC的核心类是DispatcherServlet类，其类结构如下图所示
 ![](https://swapp-images.oss-cn-hangzhou.aliyuncs.com/user-head-img/20170930/005e48ef3c6b700c411219ebc399e05e.png)
 
-### 怎么做
+### SpringMVC怎么做
 SpringMVC的强大来源于它背后的IOC容器和它的MVC设计思想的运用。
 - IOC容器  
 SpringMVC在运行阶段需要用到许多的BEAN，这些bean从哪里来呢？阅读源码会知道在SpringMVC启动以先，会先通过配置文件启动并初始化好IOC容器，于是在之后的过程中只需要从IOC中获取BEAN就可以了，所以说SpringMVC是依托于强大的IOC容器的。

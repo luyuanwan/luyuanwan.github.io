@@ -16,7 +16,7 @@ SpringMVC的强大来源于它背后的IOC容器和它的MVC设计思想的运�
 - IOC容器  
 SpringMVC在运行阶段需要用到许多的BEAN，这些bean从哪里来呢？阅读源码会知道在SpringMVC启动以先，会先通过配置文件启动并初始化好IOC容器，于是在之后的过程中只需要从IOC中获取BEAN就可以了，所以说SpringMVC是依托于强大的IOC容器的。
 - 初始化组件  
-在IOC容器初始化完毕后，SpringMVC会初始化9大组件，请看代码:
+在IOC容器初始化完毕后，SpringMVC会初始化9大组件，请看代码:  
 ```java
 	/**
 	 * Initialize the strategy objects that this servlet uses.

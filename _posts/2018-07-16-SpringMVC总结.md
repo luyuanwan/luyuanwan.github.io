@@ -6,7 +6,7 @@ SpringMVC是一款被许多大小型公司使用的热门MVC框架，本人不�
 SpringMVC的核心是一个Servlet，它根据Servlet规范实现了一个易于开发者使用的Servlet开发框架，易于使用的地方主要体现在：  
 1、添加一个URL的功能非常方便，不再像很早之前使用WebWork(Struct1的前身)一样需要频繁修改web.xml配置；  
 2、获取前端传递的参数很方便，只需要加上一些合适的注解即可(Struct2获取参数较为不便)；  
-3、一个URL功能可以被影射到一个方法上，而不用像struct2一个功能只能映射到一个类；  
+3、一个URL功能可以被映射到一个方法上，而不用像struct2一个功能只能映射到一个类；  
 4、可以依托Spring强大的IOC，获取Bean非常方便，结偶能力大大提升。  
 SpringMVC的核心类是DispatcherServlet类，其类结构如下图所示
 ![](https://swapp-images.oss-cn-hangzhou.aliyuncs.com/user-head-img/20170930/005e48ef3c6b700c411219ebc399e05e.png)

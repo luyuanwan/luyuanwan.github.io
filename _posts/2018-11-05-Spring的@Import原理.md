@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      Spring的@Import原理
+date:       2018-11-05
+author:     BY 大雁小鱼
+catalog:    true
+tags:
+    - Spring
+    - @Import
+---
+
 # 前言
 在使用Spring的时候会使用@Import注解，这个注解是怎么起作用的，它有什么作用呢，今天我就来聊聊这个注解的前世今生。
 

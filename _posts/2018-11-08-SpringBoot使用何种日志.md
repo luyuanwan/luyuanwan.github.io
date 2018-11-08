@@ -18,7 +18,7 @@ SpringBoot借助事件来接入日志的，在Spring中当完成某些事情的�
 我们来看看LoggingSystem.get函数都干了些什么，如下图所示  
 ![](https://swapp-images.oss-cn-hangzhou.aliyuncs.com/user-head-img/20170724/e3d3f5f482f088d573fc2cf230b4ee60.png)
 
-它首先取系统信息，如果配置了系统信息，则使用它所谓日志实现，否则就在SYSTEMS中查找第一个在类路径上可以找到的日志实现
+它首先取系统信息，如果配置了系统信息，则使用它作为日志实现，否则就在SYSTEMS中查找第一个在类路径上可以找到的日志实现
 
 ### 注意事项
 这里有一个细节要注意，根据代码所示，它第一个会去查找org.springframework.boot.logging.logback.LogbackLoggingSystem，但如果你的类路径下没有logback实现，而只有log4j实现的话，是会报错的，报错的原因是下面这段代码引起的，也许这就是一个坑吧  

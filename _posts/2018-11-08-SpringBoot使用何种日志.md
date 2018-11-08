@@ -21,5 +21,23 @@ SpringBoot借助事件来接入日志的，在Spring中当完成某些事情的�
 它首先取系统信息，如果配置了系统信息，则使用它作为日志实现，否则就在SYSTEMS中查找第一个在类路径上可以找到的日志实现
 
 ### 注意事项
-这里有一个细节要注意，根据代码所示，它第一个会去查找org.springframework.boot.logging.logback.LogbackLoggingSystem，但如果你的类路径下没有logback实现，而只有log4j实现的话，是会报错的，报错的原因是下面这段代码引起的，也许这就是一个坑吧  
+下面这段代码会引起logback异常，有时间去分析一下原因:)
 ![](https://swapp-images.oss-cn-hangzhou.aliyuncs.com/user-head-img/20170724/e3d3f5f482f088d573fc2cf230b4ee61.png)
+
+### 如何切换日志
+有2种办法切换日志实现
+1. 系统变量中写入你要的日志实现信息，比如下面这样（同时你要在类路径下存在相应的实现包）
+
+```java
+//logback实现
+System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.logback.LogbackLoggingSystem");
+//log4j实现
+System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.log4j2.Log4J2LoggingSystem");
+//Java自带实现
+System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.java.JavaLoggingSystem");
+```
+
+2. 在类路径下需要存在以下以类，就能按顺序选择相应实现 
+存在ch.qos.logback.core.Appender，则选择logback实现  
+存在org.apache.logging.log4j.core.impl.Log4jContextFactory，则选择log4j实现  
+存在java.util.logging.LogManager，则选择Java自带实现  

@@ -37,7 +37,7 @@ System.setProperty("org.springframework.boot.logging","org.springframework.boot.
 System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.java.JavaLoggingSystem");
 ```
 
-2. 在类路径下需要存在以下以类，就能按顺序选择相应实现 
+2. 在类路径下需要存在以下以类，就能按顺序选择相应实现  
 存在ch.qos.logback.core.Appender，则选择logback实现  
 存在org.apache.logging.log4j.core.impl.Log4jContextFactory，则选择log4j实现  
 存在java.util.logging.LogManager，则选择Java自带实现  

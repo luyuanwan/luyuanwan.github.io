@@ -30,11 +30,11 @@ SpringBoot借助事件来接入日志的，在Spring中当完成某些事情的�
 
 ```java
 //logback实现
-System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.logback.LogbackLoggingSystem");
+System.setProperty("org.springframework.boot.logging.LoggingSystem","org.springframework.boot.logging.logback.LogbackLoggingSystem");
 //log4j实现
-System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.log4j2.Log4J2LoggingSystem");
+System.setProperty("org.springframework.boot.logging.LoggingSystem","org.springframework.boot.logging.log4j2.Log4J2LoggingSystem");
 //Java自带实现
-System.setProperty("org.springframework.boot.logging","org.springframework.boot.logging.java.JavaLoggingSystem");
+System.setProperty("org.springframework.boot.logging.LoggingSystem","org.springframework.boot.logging.java.JavaLoggingSystem");
 ```
 
 2. 在类路径下需要存在以下类，就能按顺序选择相应实现  

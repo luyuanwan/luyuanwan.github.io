@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      SpringBoot使用何种日志
+subtitle:   日志
+author:     BY 大雁小鱼
+catalog:    true
+tags:
+    - Spring
+---
+
 ## 结论
 SpringBoot按照以下的顺序查找日志实现
 - org.springframework.boot.logging.logback.LogbackLoggingSystem（logback）
